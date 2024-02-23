@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pagina di Login e Registrazione</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .toggle-form {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form method="POST" action="codice.php">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Accedi">
+        </form>
+
+        <div class="toggle-form">
+            <p>Non hai un account? <a href="#" onclick="toggleRegistrationForm()">Registrati</a></p>
+        </div>
+
+        
+        <form method="POST" action="registrazione.php" id="registrationForm" style="display: none;">
+            <h2>Registrazione</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Registrati">
+        </form>
+
+      
+    </div>
+
+    <script>
+        function toggleRegistrationForm() {
+            var registrationForm = document.getElementById("registrationForm");
+            var toggleLinks = document.getElementsByClassName("toggle-form");
+
+            if (registrationForm.style.display === "none") {
+                registrationForm.style.display = "block";
+                toggleLinks[0].style.display = "none";
+                toggleLinks[1].style.display = "block";
+            } else {
+                registrationForm.style.display = "none";
+                toggleLinks[0].style.display = "block";
+                toggleLinks[1].style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
