@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Query per inserire l'utente nel database
-    $query = "INSERT INTO users (username, password) VALUES (:username, :password)";
+    $query = "INSERT INTO users (nome, password) VALUES (:username, :password)";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':password', $password);

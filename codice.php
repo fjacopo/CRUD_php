@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Query per verificare l'esistenza dell'utente nel database
-    $query = "SELECT * FROM users WHERE username = :username AND password = :password";
+    $query = "SELECT * FROM users WHERE nome = :username AND password = :password";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':password', $password);
